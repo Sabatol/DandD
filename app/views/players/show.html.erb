@@ -1,0 +1,67 @@
+<div class="container border border-dark mt-3 rounded" style="background:white">
+  <div class="container row pt-4 d-flex justify-content-center">
+    <div class="text-center pb-4">
+      <h1><%= @player.name%></h1>
+    </div>
+    <div class="col-12 row">
+    <div class="col-4 d-flex align-items-center justify-content-center">
+      <% unless @player.image.blank? %>
+      	<img src=<%=@player.image%>  style="width: 75%">
+			<% end %>
+    </div>
+    <div class="col-4 d-flex align-items-center justify-content-center">
+      <div class="border border-dark d-flex align-items-center justify-content-center">
+        <div class="p-5">
+          <p>CARACTERISTIQUES :</p>
+          <p>force : <%= @player.force%></p>
+          <p>dexterité : <%= @player.dexterite%></p>
+          <p>intelligence : <%= @player.intelligence%></p>
+          <p>sagesse : <%= @player.sagesse%></p>
+          <p>charisme : <%= @player.charisme%></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 d-flex justify-content-center">
+      <div class="border border-dark d-flex align-items-center justify-content-center">
+        <div class="p-5">
+          <p>pv : <%= @player.pv%>/<%= @player.pvmax%></p>
+          <p>défense : <%= @player.defense%></p>
+          <p>niveau : <%= @player.niveau%></p>
+          <p>classe : <%= @player.classe%></p>
+          <p>race : <%= @player.race%></p>
+          <p>bourse : <%= @player.bourse.blank? ? 0 : @player.bourse%> pièces d'or</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-12 d-flex justify-content-around mt-5">
+      <div class="col-5 border border-dark pt-2 px-3">
+        <p>DESCRIPTION : </p><%= @player.description%>
+      </div>
+      <div class="col-5 border border-dark pt-2 px-3">
+        
+        <ul> <p>INVENTAIRE :</p> 
+        <% unless @player.inventaire.blank? %> 
+          <% @player.inventaire.split(",").each do |invent|  %>
+            <li style="margin-left: 50px"> <%= invent %> </li>
+          <% end %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center p-5">
+    <div class="col-8 border border-dark pt-2 px-3">
+    <p>COMPETENCES :</p> 
+      <% unless @player.competences.blank? %> 
+        <% @player.competences.split(",").each do |comp| %>
+          <li style="margin-left: 50px"> <%= comp %> </li>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+    <div class="text-center mb-5">
+      <%= link_to "Modifier mon personnage" , edit_user_player_path(current_user.id, @player.id), class:"btn btn-dark" if current_user == @player.user  %>
+    </div>
+  </div>
+</div>
+

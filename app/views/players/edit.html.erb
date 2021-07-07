@@ -1,0 +1,90 @@
+	<div class="container row border border-dark mt-3 pt-4" style="background-color:white">
+		<%= form_tag url_for(action: "update"), method: "patch" do %>
+			<div class="text-center pb-4">
+				<h1><%= @edit_player.name%></h1>
+			</div>
+			<div class="col-12 row">
+				<div class="col-4 d-flex align-items-center justify-content-center">
+					<% unless @edit_player.image.blank? %>
+      			<img src=<%=@edit_player.image%>  style="width: 75%">
+					<% end %>
+				</div>
+				<div class="col-4 d-flex align-items-center justify-content-center">
+					<div class="border border-dark d-flex align-items-center justify-content-center">
+						<div class="p-5">
+							<p>CARACTERISTIQUES :</p>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Force" %> <%= text_field_tag "force", @edit_player.force, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Dexterité" %> <%= text_field_tag "dexterite", @edit_player.dexterite, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Intelligence" %> <%= text_field_tag "intelligence", @edit_player.intelligence, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Sagesse" %> <%= text_field_tag "sagesse", @edit_player.sagesse, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Charisme" %> <%= text_field_tag "charisme", @edit_player.charisme, class:"text-end", style:"width:50px" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 d-flex justify-content-center">
+					<div class="border border-dark d-flex align-items-center justify-content-center">
+						<div class="p-5">
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Points de vie actuel" %> <%= text_field_tag "pv", @edit_player.pv, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Points de vie maximum" %> <%= text_field_tag "pvmax", @edit_player.pvmax, class:"text-end", style:"width:50px" %>
+							</div>
+
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Défense" %> <%= text_field_tag "defense", @edit_player.defense, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Niveau" %> <%= text_field_tag "niveau", @edit_player.niveau, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Bourse" %> <%= text_field_tag "bourse", @edit_player.bourse, class:"text-end", style:"width:50px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Classe du personnage" %> <%= text_field_tag "classe", @edit_player.classe, class:"text-end", style:"width:75px" %>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Race du personnage" %> <%= text_field_tag "race", @edit_player.race, class:"text-end", style:"width:75px" %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 d-flex justify-content-around mt-5">
+				<div class="col-5 border border-dark pt-2 px-3">
+					<div class="form-input d-flex justify-content-between">
+						<%= label_tag "Description :" %> <%= text_area_tag "description", @edit_player.description, style:"width:300px" %>
+					</div>
+				</div>
+				<div class="col-5 border border-dark pt-2 px-3">
+					<div class="form-input d-flex justify-content-between">
+						<%= label_tag "Inventaire (Mettre une virgule entre chaque objet) :" %>
+						<%= text_area_tag "inventaire", @edit_player.inventaire, style:"width:300px" %>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 d-flex justify-content-center p-5">
+				<div class="col-8 border border-dark pt-2 px-3">
+					<div class="form-input d-flex justify-content-between">
+						<%= label_tag "Compétences (Mettre une virgule entre chaque comp):" %>
+						<%= text_area_tag "competences", @edit_player.competences, style:"width:300px" %>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 d-flex justify-content-center">
+				<div class="text-center mb-5 col-3">
+					<%= submit_tag "Je confirme !", type: "submit", class: "btn btn-dark", style: "padding: 10px; width:90%" %>
+				</div>
+			</div>
+		<% end %>
+	</div>

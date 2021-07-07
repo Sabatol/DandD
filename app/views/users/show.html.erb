@@ -1,0 +1,14 @@
+<div class="container d-flex justify-content-center align-items-center" style="height:75vh">
+    <div class="border border-dark p-5  rounded" style="background:white">
+        <h1>Mail : <%= @user.email %></h1>
+        <p>Liste des personnages : </p>
+        <p>
+        <% @user.players.each do |player| %>
+            <%= link_to "#{player.name}", user_player_path(current_user.id, player.id) %>
+            <%= "------>" %>
+            <%= link_to "Supprimer #{player.name}", user_player_path(current_user.id, player.id), method: :delete, :confirm => 'Sûr de toi ?' %>
+            <br>
+        <% end %>
+        </p>
+    </div>
+</div>

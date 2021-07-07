@@ -1,0 +1,5 @@
+<h1>BIENVENUE SUR LA</h1>
+<p>Liste de vos personnages</p>
+<% @players.each do |player| %>
+    <%= link_to player.name, user_player_path(current_user.id, player.id) %>
+<% end %>

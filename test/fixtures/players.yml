@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  pv: 1
+  force: 1
+  dexterite: 1
+  intelligence: 1
+  sagesse: 1
+  charisme: 1
+  bourse: 1
+  competences: MyText
+  inventaire: MyText
+
+two:
+  name: MyString
+  description: MyText
+  pv: 1
+  force: 1
+  dexterite: 1
+  intelligence: 1
+  sagesse: 1
+  charisme: 1
+  bourse: 1
+  competences: MyText
+  inventaire: MyText

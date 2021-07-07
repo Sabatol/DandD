@@ -1,0 +1,67 @@
+
+
+<div class="container">
+	<div class="container row border border-dark pt-5 mt-5 d-flex justify-content-center rounded" style="background-color:white">
+		<%= form_tag url_for(action: "create"), method: "post" do %>
+			<div class="text-center pb-4">
+				<h1>     
+         <div class="form-input">
+          <%= label_tag "Nom du personnage :" %>
+          <%= text_field_tag "name" %>
+          </div>
+        </h1>
+			</div>
+			<div class="col-12 row d-flex justify-content-around">
+				<div class="col-6 d-flex align-items-center justify-content-center">
+					<div class="border border-dark d-flex align-items-center justify-content-center">
+						<div class="p-5">
+							<p>CARACTERISTIQUES :</p>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Force :" %> <%= text_field_tag "force"%>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Dexterité :" %> <%= text_field_tag "dexterite"%>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Intelligence :" %> <%= text_field_tag "intelligence"%>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Sagesse :" %> <%= text_field_tag "sagesse"%>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Charisme :" %> <%= text_field_tag "charisme"%>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 d-flex justify-content-center">
+					<div class="border border-dark d-flex align-items-center justify-content-center">
+						<div class="p-5">
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "PV maximum :" %> <%= text_field_tag "pvmax"%>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Classe du personnage :" %> <%= text_field_tag "classe"%>
+							</div>
+							<div class="form-input d-flex justify-content-between">
+								<%= label_tag "Race du personnage :" %> <%= text_field_tag "race"%>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 d-flex justify-content-around mt-5">
+				<div class="col-8 border border-dark pt-2 px-3">
+					<div class="form-input d-flex justify-content-between">
+						<%= label_tag "Description :" %> <%= text_area_tag "description"%>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 d-flex justify-content-center mt-5">
+				<div class="text-center mb-5 col-3">
+					<%= submit_tag "Créer le personnage", type: "submit", class: "btn btn-dark", style: "padding: 10px; width:90%" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
