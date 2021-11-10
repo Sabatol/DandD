@@ -1,2 +1,3 @@
-<h1>Documentations#index</h1>
-<p>Find me in app/views/documentations/index.html.erb</p>
+<% @documentations.each do |doc| %>
+    <%= link_to doc.title, documentation_path(doc.id) %>
+<% end %>

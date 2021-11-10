@@ -1,5 +1,7 @@
 class DocumentationsController < ApplicationController
-  def index; end
+  def index
+    @documentations = Documentation.all
+  end
 
   def show
     @document = Documentation.find_by(id: params[:id])

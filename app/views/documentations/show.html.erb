@@ -1,2 +1,4 @@
-<h1>Documentations#show</h1>
-<p>Find me in app/views/documentations/show.html.erb</p>
+<p><%= @document.title %></p>
+<% unless @document.content.blank? %>
+  <img src=<%=@document.content%>  style="width: 75%">
+<% end %>

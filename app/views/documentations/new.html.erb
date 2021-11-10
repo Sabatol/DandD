@@ -1,24 +1,24 @@
-
 <div class="container">
-    <div class="col-8 text-center">
+  <div class="col-8 text-center">
     <%= form_tag url_for(action: "create"), method: "post" do %>
       <div class="form-input">
-        <%= label_tag "Titre de l'article" %>
+        <%= label_tag "Titre de la documentation" %>
         <%= text_field_tag "title" %>
       </div>
       <div class="form-input">
-        <%= text_area_tag "content", "Contenu de l'article ici", style:"width:45rem" %>
+        <%= text_area_tag "content", "Adresse du document hébergé", style:"width:45rem" %>
       </div>
       <div class="text-center">
         <%= submit_tag "Confirmer la création", type: "submit", class: "btn text-center", style: "padding: 10px; width:90%" %>
       </div>
     <% end %>
+    <br>
+    <br>
+    <div class="copy-right text-center">
       <br>
+      <%= link_to "Retour", :back, class: "btn text-center", style: "padding: 10px 12px" %><br>
       <br>
-      <div class="copy-right text-center">
-        <br>
-        <%= link_to "Retour", :back, class: "btn text-center", style: "padding: 10px 12px" %><br><br>
-        <%= link_to "Revenir à l'accueil", root_path, style: " margin-top: 0.5rem" %>
-      </div>
-      </div>
+      <%= link_to "Revenir à l'accueil", root_path, style: " margin-top: 0.5rem" %>
+    </div>
   </div>
+</div>

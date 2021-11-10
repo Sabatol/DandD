@@ -1,34 +1,97 @@
-
 <div class="container mt-5">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @players.each do |player| %>
       <div class="my-3 col-xs-12 col-sm-8 col-md-4">
         <div class="card h-100">
           <div class="card-body">
-            <h5 class="card-title border-bottom pb-2">
-              <%= link_to player.name, user_player_path(player.user.id, player.id) %> 
-            </h5> 
-              <p class="card-text text-right"><%= "#{player.pv}/#{player.pvmax} PVs" %></p><br>
+            <h5 class="card-title border-bottom pb-2 text-center">
+              <%= link_to player.name, user_player_path(player.user.id, player.id), class:"text-dark h3" %>
+            </h5>
+            <div class="col-12 d-flex justify-content-center">
+              <div class="col-6 mt-3 d-flex justify-content-center align-items-center">
+                <img src="https://zupimages.net/up/21/45/yxn8.png"  style="width: 22%">
+                <h5 class="card-text d-flex justify-content-center pl-2">
+                  <%= "#{player.pv}/#{player.pvmax}" %>
+                </h5>
+              </div>
+            </div>
             <div class="text-center">
-              <p class="card-text"><%= "Force : #{player.force}" %></p>
-              <p class="card-text"><%= "Dexterité : #{player.dexterite}" %></p>
-              <p class="card-text"><%= "Intelligence : #{player.intelligence}" %></p>
-              <p class="card-text"><%= "Sagesse : #{player.sagesse}" %></p>
-              <p class="card-text"><%= "Charisme : #{player.charisme}" %></p>
+              <br>
+              <div class="col-12 d-flex justify-content-center">
+                <div class="col-10 d-flex align-items-center">
+                  <% unless player.image.blank? %>
+                    <img src=<%=player.image%>  style="width: 100%">
+                  <% end %>
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="col-12 d-flex justify-content-center">
+                <div class="col-6 d-flex justify-content-center border-right">
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/2s2s.png"  style="width: 100%"><%= "#{player.force}" %></p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 100%"><%= modificateur(player.force)%></p>
+                  </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/xpqn.png"  style="width: 100%"><%= "#{player.intelligence}"%></p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 100%"><%= modificateur(player.intelligence)%></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <div class="col-6 d-flex justify-content-center border-right">
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/g2r3.png"  style="width: 100%"><%= "#{player.dexterite}" %></p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 100%"><%= modificateur(player.dexterite)%></p>
+                  </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/muzx.png"  style="width: 100%"><%= "#{player.sagesse}" %></p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 100%"><%= modificateur(player.sagesse)%></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ru3w.png"  style="width: 100%"><%= "#{player.charisme}" %></p>
+                  </div>
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 100%"><%= modificateur(player.charisme)%></p>
+                  </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="col-6">
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/pssp.png"  style="width: 100%"><%= "#{player.defense}" %></p>
+                  </div>
+                  <div class="col-6">
+                  </div>
+                </div>
+              </div>
             </div>
             <%# <p class="card-text"><%= "Bourse du personnage : #{player.bourse.blank? ? "0" + " pièce d'or" : player.bourse.to_s + " pièces d'or"}" %></p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"><%= player.user.email %></small>
-          </div>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><%= player.user.email %></small>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
-
-    <%# unless @docs.blank? %> 
-      <%# @docs.each do |doc| %>
-        <p><%#=doc.title %></p>
-      <%# end %>
-    <%# end %>
+</div>
+<%# unless @docs.blank? %>
+<%# @docs.each do |doc| %>
+  <p><%#=doc.title %></p>
+  <%# end %>
+  <%# end %>
