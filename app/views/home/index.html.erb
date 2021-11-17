@@ -11,7 +11,7 @@
               <div class="col-6 mt-3 d-flex justify-content-center align-items-center">
                 <img src="https://zupimages.net/up/21/45/yxn8.png"  style="width: 22%">
                 <h5 class="card-text d-flex justify-content-center pl-2">
-                  <%= "#{player.pv}/#{player.pvmax}" %>
+                  <b><%= "#{player.pv}/#{player.pvmax}" %></b>
                 </h5>
               </div>
             </div>
@@ -29,7 +29,9 @@
               <div class="col-12 d-flex justify-content-center">
                 <div class="col-6 d-flex justify-content-center border-right">
                   <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/2s2s.png"  style="width: 100%"><%= "#{player.force}" %></p>
+                    <b>
+                      <p class="card-text"><img src="https://zupimages.net/up/21/45/2s2s.png"  style="width: 100%"><%= "#{player.force}" %></p>
+                    </b>
                   </div>
                   <div class="col-6">
                     <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.force)%></p>
@@ -37,7 +39,9 @@
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                   <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/xpqn.png"  style="width: 100%"><%= "#{player.intelligence}"%></p>
+                    <b>
+                      <p class="card-text"><img src="https://zupimages.net/up/21/45/xpqn.png"  style="width: 100%"><%= "#{player.intelligence}"%></p>
+                    </b>
                   </div>
                   <div class="col-6">
                     <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.intelligence)%></p>
@@ -47,47 +51,56 @@
               <div class="col-12 d-flex justify-content-center">
                 <div class="col-6 d-flex justify-content-center border-right">
                   <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/af3h.png"  style="width: 100%"><%= "#{player.dexterite}" %></p>
-                  </div>
-                  <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.dexterite)%></p>
-                  </div>
+                    <b>
+                      <p class="card-text"><img src="https://zupimages.net/up/21/45/af3h.png"  style="width: 100%"><%= "#{player.dexterite}" %></p>
+                    </b>
+                  </b>
                 </div>
-                <div class="col-6 d-flex justify-content-center">
-                  <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/muzx.png"  style="width: 100%"><%= "#{player.sagesse}" %></p>
-                  </div>
-                  <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.sagesse)%></p>
-                  </div>
+                <div class="col-6">
+                  <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.dexterite)%></p>
                 </div>
               </div>
-              <div class="col-12 d-flex justify-content-center">
-                <div class="col-6 d-flex justify-content-center border-right">
-                  <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ru3w.png"  style="width: 100%"><%= "#{player.charisme}" %></p>
-                  </div>
-                  <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.charisme)%></p>
-                  </div>
+              <div class="col-6 d-flex justify-content-center">
+                <div class="col-6">
+                  <b>
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/muzx.png"  style="width: 100%"><%= "#{player.sagesse}" %></p>
+                  </b>
                 </div>
-                <div class="col-6 d-flex justify-content-center">
-                  <div class="col-6">
-                    <p class="card-text"><img src="https://zupimages.net/up/21/45/pssp.png"  style="width: 100%"><%= "#{player.defense}" %></p>
-                  </div>
-                  <div class="col-6">
-                  </div>
+                <div class="col-6">
+                  <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.sagesse)%></p>
                 </div>
               </div>
             </div>
-            <%# <p class="card-text"><%= "Bourse du personnage : #{player.bourse.blank? ? "0" + " pièce d'or" : player.bourse.to_s + " pièces d'or"}" %></p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"><%= player.user.email %></small>
-        </div>
+            <div class="col-12 d-flex justify-content-center">
+              <div class="col-6 d-flex justify-content-center border-right">
+                <div class="col-6">
+                  <b>
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/ru3w.png"  style="width: 100%"><%= "#{player.charisme}" %></p>
+                  </b>
+                </div>
+                <div class="col-6">
+                  <p class="card-text"><img src="https://zupimages.net/up/21/45/ilsm.png"  style="width: 80%"><%= modificateur(player.charisme)%></p>
+                </div>
+              </div>
+              <div class="col-6 d-flex justify-content-center">
+                <div class="col-6">
+                  <b>
+                    <p class="card-text"><img src="https://zupimages.net/up/21/45/pssp.png"  style="width: 100%"><%= "#{player.defense}" %></p>
+                  </b>
+                </div>
+                <div class="col-6">
+                </div>
+              </div>
+            </div>
+          </div>
+          <%# <p class="card-text"><%= "Bourse du personnage : #{player.bourse.blank? ? "0" + " pièce d'or" : player.bourse.to_s + " pièces d'or"}" %></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= player.user.email %></small>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
 </div>
 <%# unless @docs.blank? %>

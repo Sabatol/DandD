@@ -1,20 +1,34 @@
 <nav class="row p-2 mx-0" style="background-color: #e3f2fd;">
   <% if user_signed_in? %>
     <div class="col-9 d-flex justify-content-center">
-      <div class="d-flex align-items-center">
-        <%= link_to "Accueil", root_path, class: "btn btn-dark" %>
+      <div class="d-flex align-items-center mr-2">
+        <%= link_to "Liste des personnages", root_path, class: "btn btn-info" %>
+      </div>
+      <div class="d-flex align-items-center mr-2">
+        <%= link_to "Armes", wiki_weapons_path, class: "btn btn-outline-info" %>
+      </div>
+      <div class="d-flex align-items-center mr-2">
+        <%= link_to "Compétences", wiki_skills_path, class: "btn btn-outline-info" %>
+      </div>
+      <div class="">
+        <%= link_to "Cartes", wiki_maps_path, class: "btn btn-outline-info" %>
       </div>
     </div>
     <div class="col-3 d-flex justify-content-end">
       <div class="">
-        <%= link_to "Nouveau perso", new_user_player_path(current_user.id), class: "btn btn-secondary" %>
-        <%= link_to "Mon profil", user_path(current_user.id), class: "btn btn-primary" %>
+        <% if current_user.players.count < 1 %>
+          <%= link_to "Nouveau perso", new_user_player_path(current_user.id), class: "btn btn-secondary" %>
+        <% end %>
+        <% if current_user.admin %>
+          <%= link_to "Nouvelle carte", new_map_path, class: "btn btn-secondary" %>
+        <% end %>
+        <%= link_to "Mon profil", user_path(current_user.id), class: "btn btn-success" %>
         <%= link_to "Se déconnecter", destroy_user_session_path, class: "btn btn-dark", :method => :delete %>
       </div>
     </div>
   <% else %>
     <div class="col-9 d-flex justify-content-center">
-      <div class="">
+      <div class="d-flex align-items-center">
         <%= link_to "Accueil", root_path, class: "btn btn-dark" %>
       </div>
     </div>
