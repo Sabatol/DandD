@@ -6,7 +6,7 @@ class MapsController < ApplicationController
   def create
     @new_map = Map.create(title: params[:title], content: params[:content])
     if @new_map.save
-      redirect_to root_path
+      redirect_to wiki_maps_path
     else
       render 'new'
     end
