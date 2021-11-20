@@ -2,4 +2,6 @@ body {
   font-family: 'MedievalSharp', cursive !important;
   background-image: url('/assets/bg.jpg')
 }
-
+card-text:hover {
+  transform: translateX(-2px);
+}
