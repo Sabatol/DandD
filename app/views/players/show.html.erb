@@ -40,7 +40,7 @@
         <%= @player.description%>
       </div>
       <div class="col-xs-12 col-sm-8 col-md-5 border border-dark pt-2 px-3">
-        <ul> 
+        <ul>
           <p>INVENTAIRE :</p>
           <% unless @player.inventaire.blank? %>
             <% @player.inventaire.split(",").each do |invent|  %>
@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="text-center mb-5">
-      <%= link_to "Modifier mon personnage" , edit_user_player_path(current_user.id, @player.id), class:"btn btn-dark" if current_user == @player.user  %>
+      <%= link_to "Modifier mon personnage" , edit_user_player_path(current_user.id, @player.id), class:"btn btn-dark" if current_user == @player.user || current_user.admin %>
     </div>
   </div>
 </div>
